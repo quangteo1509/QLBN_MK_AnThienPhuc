@@ -22,7 +22,7 @@
                     <nz-form-control  nzErrorTip="Bạn phải nhập họ tên!">
                         <nz-input-group class="inputContent">
                             <p>Họ tên</p>
-                            <input nz-input type="text" style="text-align: left;" formControlName="hoTen" required/>
+                            <input nz-input type="text" style="text-align: left;" formControlName="tenBN" required/>
                         </nz-input-group>
 
                         <nz-input-group class="inputContent">
@@ -37,12 +37,12 @@
 
                         <nz-input-group class="inputContent">
                             <p>Phone</p>
-                            <input nz-input type="text" style="text-align: left;" formControlName="sdt" required/>
+                            <input nz-input type="text" style="text-align: left;" formControlName="SDT" required maxlength="10"/>
                         </nz-input-group>
 
                         <nz-input-group class="inputContent">
                             <p>Email</p>
-                            <input nz-input type="text" style="text-align: left;" formControlName="email" required/>
+                            <input nz-input type="text" style="text-align: left;" formControlName="Email" required/>
                         </nz-input-group>
 
                         <nz-input-group class="inputContent">
@@ -52,7 +52,7 @@
 
                         <nz-input-group class="inputContent">
                             <p>Nội dung khám</p>
-                            <textarea style="text-align: left;" formControlName="ndKham" nz-input rows="4" placeholder="Nhập nội dung khám" required></textarea>
+                            <textarea style="text-align: left;" formControlName="noiDungKham" nz-input rows="4" placeholder="Nhập nội dung khám" required></textarea>
                         </nz-input-group>
                     </nz-form-control>
 

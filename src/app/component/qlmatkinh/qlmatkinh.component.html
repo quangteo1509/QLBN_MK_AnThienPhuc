@@ -27,12 +27,10 @@
                 <td>{{item.giaBan}}</td>
                 <td>{{item.baoHanh}}</td>
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/qlweb-c8a47.appspot.com/o{{item.hinhSP}}?alt=media&token=11d84b6e-ba6e-46b1-944c-8f1138dc415c" alt=""></td>
-
+                <!-- Ba nút thao tác -->
                 <td class="none-border">
                     <button nz-button nzType="primary" (click)="showModal1()" [routerLink]="['/MatKinh', item.maKinh]"
                         class="margin-5">Sửa</button>
-                    <button nz-button nzType="primary" (click)="showModal2()" [routerLink]="['/MatKinh', item.maKinh]"
-                        class="margin-5">Chi tiết</button>
                     <button nz-button nzType="primary" nzDanger (click)="showDeleteConfirm()"
                         [routerLink]="['/MatKinh', item.maKinh]">Delete</button>
                 </td>
@@ -68,7 +66,7 @@
                                     <input nz-input placeholder="Nhập địa chỉ" formControlName="loaiGong" />
                                 </div>
                                 <div class="inputContent">
-                                    <p>Giá</p>
+                                    <p>Giá bán</p>
                                     <input nz-input placeholder="Nhập số Độ cận" formControlName="giaBan" />
                                 </div>
                             </div>
@@ -81,12 +79,6 @@
                                     <input type="file" (change)="hinh($event)" accept="*.png.jpg">
                                 </div>
                                
-                            </div>
-                            <div class="line1">
-                                <div class="inputContent">
-                                    <p class="">Mã phiếu khám</p>
-                                    <input nz-input placeholder="Nhập số Độ cận" formControlName="maPhieuKham" />
-                                </div>
                             </div>
                         </ng-container>
                     </form>
@@ -134,15 +126,6 @@
                                 </div>
                                 <div class="inputContent">
                                     <!-- <img src="/{{item.Hinh}}" alt=""> -->
-                                </div>
-                            </div>
-                            <div class="line1">
-                                <div class="inputContent">
-                                    <p class="">Mã phiếu khám</p>
-                                    <input nz-input placeholder="Nhập số Độ cận" formControlName="maPhieuKham" />
-                                </div>
-                                <div class="inputContent">
-                                    <!-- <img src="https://firebasestorage.googleapis.com/v0/b/qlweb-c8a47.appspot.com/o{{item.hinhSP}}?alt=media&token=11d84b6e-ba6e-46b1-944c-8f1138dc415c""" alt=""> -->
                                 </div>
                             </div>
                             <!-- <button type="submit" class="datLich">ĐẶT LỊCH KHÁM</button> -->

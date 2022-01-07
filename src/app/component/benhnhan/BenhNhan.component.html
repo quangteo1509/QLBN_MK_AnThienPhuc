@@ -22,11 +22,11 @@
                 <td class="none-border">
                     <button nz-button nzType="primary" (click)="showModal1()" [routerLink]="['/BenhNhan', item.maBN]"
                         class="margin-5">Sửa</button>
-                    <button nz-button nzType="primary" (click)="showModal2()" [routerLink]="['/BenhNhan', item.maBN]" class="margin-5">Chi tiết</button>
+                    <!-- <button nz-button nzType="primary" (click)="showModal2()" [routerLink]="['/BenhNhan', item.maBN]" class="margin-5">Chi tiết</button> -->
                     <button nz-button nzType="primary" nzDanger (click)="showDeleteConfirm()" [routerLink]="['/BenhNhan', item.maBN]">Delete</button>
                 </td>
                 <!-- Thêm bệnh nhân -->
-                <nz-modal nzWidth=800px [(nzVisible)]="isVisible" nzTitle="Thêm mắt kinh"
+                <nz-modal nzWidth=800px [(nzVisible)]="isVisible" nzTitle="Thêm bệnh nhân"
                     (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
                     <form action="" [formGroup]="userForm">
                         <ng-container *nzModalContent>
@@ -116,7 +116,7 @@
                     </form>
                 </nz-modal>
                 <!-- Đây là phần nút chi tiết -->
-                <nz-modal nzWidth=800px [(nzVisible)]="isVisible2" nzTitle="Chỉnh sửa thông tin"
+                <nz-modal nzWidth=800px [(nzVisible)]="isVisible2" nzTitle="Thông tin bệnh nhân"
                     (nzOnCancel)="handleCancel2()" (nzOnOk)="handleOk2()">
                     <form action="" [formGroup]="userForm">
                     <ng-container *nzModalContent >
@@ -134,7 +134,7 @@
                         <div class="line1">
                             <div class="inputContent">
                                 <p>Ngày sinh</p>
-                                <nz-date-picker style="width: 100%;" formControlName="ngaySinh" nzInputReadOnly></nz-date-picker>
+                                <nz-date-picker style="width: 100%;" formControlName="ngaySinh" nzDisabled></nz-date-picker>
                             </div>
 
                             <div class="inputContent">
@@ -149,13 +149,13 @@
                             </div>
                             <div class="inputContent">
                                 <p>Ngày đặt hẹn</p>
-                                <nz-date-picker style="width: 100%;" formControlName="ngayDatHen" nzInputReadOnly="false"></nz-date-picker>
+                                <nz-date-picker style="width: 100%;" formControlName="ngayDatHen" nzDisabled></nz-date-picker>
                             </div>
                         </div>
                         <div class="inputContent">
                             <p>Nội dung khám</p>
                             <textarea nz-input placeholder="Nhập triệu chứng của bạn"
-                                [nzAutosize]="{ minRows: 3, maxRows: 5 }" formControlName="noiDungKham"></textarea>
+                                [nzAutosize]="{ minRows: 3, maxRows: 5 }" formControlName="noiDungKham" readonly></textarea>
                         </div>
                         <!-- <button type="submit" class="datLich">ĐẶT LỊCH KHÁM</button> -->
                     </ng-container>

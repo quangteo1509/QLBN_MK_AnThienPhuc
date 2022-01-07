@@ -94,6 +94,24 @@ export class BenhNhanComponent implements OnInit {
 
   showModal1(): void {
     this.isVisible1 = true;
+    this.getParamId = this.router.snapshot.paramMap.get('maBN');
+
+    this.service.getDataId(this.getParamId);
+
+    if (this.getParamId) {
+      this.service.getDataId(this.getParamId).subscribe((res) => {
+        this.userForm.patchValue({
+          // Đổ dữ liệu ngược lại theo id có key Object 0
+          tenBN: res.data[0].tenBN,
+          ngaySinh: res.data[0].ngaySinh,
+          diaChi: res.data[0].diaChi,
+          SDT: res.data[0].SDT,
+          Email: res.data[0].Email,
+          ngayDatHen: res.data[0].ngayDatHen,
+          noiDungKham: res.data[0].noiDungKham
+        });
+      });
+    }
   }
 
   handleOk1(): void {
@@ -115,6 +133,7 @@ export class BenhNhanComponent implements OnInit {
         .subscribe((res) => {
           console.log(res);
           this.succsess = res.message;
+          this.getAllData();
         });
     } else {
       this.errmsg = 'Chưa cập nhật dữ liệu!';
